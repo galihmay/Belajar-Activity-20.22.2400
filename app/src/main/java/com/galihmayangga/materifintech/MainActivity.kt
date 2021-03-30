@@ -4,10 +4,8 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.widget.Button
-import android.widget.EditText
-import android.widget.RadioGroup
-import android.widget.Toast
+import android.view.View
+import android.widget.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -15,15 +13,28 @@ class MainActivity : AppCompatActivity() {
     private lateinit var etNama: EditText
     private lateinit var etNim: EditText
     private lateinit var rgGender: RadioGroup
+    private lateinit var tvWelcome: TextView
+
+    lateinit var prefUtil: PreferenceUtil
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        prefUtil = PreferenceUtil.newInstance(this)
+
+        if (!prefUtil.getBoolean("is_login")) {
+            val intentWelcomeActivity = Intent(this, WelcomeActivity::class.java)
+            startActivity(intentWelcomeActivity)
+        }
+
         etNama = findViewById(R.id.et_nama)
         etNim = findViewById(R.id.et_nim)
         rgGender = findViewById(R.id.rg_gender)
         buttonSubmit = findViewById(R.id.btn_submit)
+        tvWelcome = findViewById(R.id.tv_welcome)
+
+        updateData()
 
         buttonSubmit.setOnClickListener {
             val nama = etNama.text.toString()
@@ -50,5 +61,14 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-
+    private fun updateData() {
+        val nama = prefUtil.getSring("nama")
+        val welcomeMessage = "selamat datang, $nama"
+        tvWelcome.text = welcomeMessage
+        if (nama.isNullOrEmpty()) {
+            tvWelcome.visibility = View.GONE
+        } else {
+            tvWelcome.visibility = View.VISIBLE
+        }
+    }
 }
