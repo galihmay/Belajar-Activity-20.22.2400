@@ -16,6 +16,6 @@ Jurusan : Sistem Informasi (SI115) <br/>
      - Add Tampil data
      <br/>
   3. Versi 1.2 (Praktikum 5)
-     - Add shared preferences nama
+     - Add shared preferences : nama
     
      
