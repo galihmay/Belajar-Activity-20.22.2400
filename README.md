@@ -7,7 +7,7 @@ NIM     : 20.22.2400 <br/>
 Jurusan : Sistem Informasi (SI115) <br/>
 
 <b>Change Log :  </b>
-  1. Versi 1.0 (Inilisiasi project)
+  1. Versi 1.0 (Inilisiasi project/Praktikum 2 dan 3b)
      - Add form mahasiswa
      - Add DataActivity
      <br/>
