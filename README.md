@@ -14,6 +14,7 @@ Jurusan : Sistem Informasi (SI115) <br/>
   2. Versi 1.1 (Praktikum 4)
      - Add data form mahasiswa : jenis kelamin
      - Add Tampil data
+     <br/>
   3. Versi 1.2 (Praktikum 5)
      - Add shared preferences nama
     
