@@ -1,6 +1,6 @@
 # Belajar Activity 20.22.2400
 
-Praktikum 2 Fintech 
+Praktikum  Fintech 
 
 Nama    : Galih Mayangga <br/>
 NIM     : 20.22.2400 <br/>
